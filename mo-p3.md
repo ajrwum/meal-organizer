@@ -5,6 +5,7 @@
 1. name: String
 1. color: String
 1. order: String
+
    Fixed list - not changeable by user
 
 [ boisson, entrée, plat, accompagnement, fromage, dessert, matin sucré/salé ]
@@ -25,6 +26,7 @@ _option v36: ingredients [ ObjectId, ref Ingredient ]_
 1. name: String
 1. timeslot: String
 1. position: Number
+
    timeslot is a String such as 'minuit - 03:00'
 
    Fixed list
