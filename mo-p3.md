@@ -132,3 +132,7 @@ _option v36: ingredients [ ObjectId, ref Ingredient ]_
 Date filter example on meals for MongoDb:
 
 `{ date: {$eq: ISODate('2022-02-04')} }`
+
+Date filter between Monday and Sunday of 1 week:
+
+`{ date: { $gte: ISODate('2022-01-31'), $lt: ISODate('2022-02-07') } }`
