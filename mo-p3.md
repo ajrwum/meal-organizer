@@ -4,6 +4,7 @@
 
 1. name: String
 1. color: String
+1. order: String
    Fixed list - not changeable by user
 
 [ boisson, entrée, plat, accompagnement, fromage, dessert, matin sucré/salé ]
@@ -22,12 +23,13 @@ _option v36: ingredients [ ObjectId, ref Ingredient ]_
 ## MealType
 
 1. name: String
-1. timeslot: {}
-   timeslot is an object {position: 1, displayVal: 1AM-3AM}
+1. timeslot: String
+1. position: Number
+   timeslot is a String such as 'minuit - 03:00'
 
    Fixed list
 
-[ {order: 100, name: petit déjeuner}, brunch (200), déjeuner (300), goûter(400), diner(500), souper(600), collation(700) ]
+[ {position: 100, name: petit déjeuner}, brunch (200), déjeuner (300), goûter(400), diner(500), souper(600), collation(700) ]
 
 <!-- ## Day
 
@@ -119,4 +121,4 @@ _option v36: ingredients [ ObjectId, ref Ingredient ]_
   - data of 1 food for a user
 - MealCard (container of foods)
   - data of 1 meal
-- Day (container of meals ??? or pure css presentation ???)
+- Day (container of meals ??? or pure css presentation ???) : to be seen with regard to the drag & drop feature
