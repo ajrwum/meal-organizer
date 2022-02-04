@@ -99,11 +99,11 @@ _option v36: ingredients [ ObjectId, ref Ingredient ]_
 | PATCH  | /foods/food/:id    | Update a food                         | logged user |
 | DELETE | /foods/food/:id    | Delete a food                         | logged user |
 |  GET   | /foods/:categoryId | Get all foods matching the categoryId | logged user |
-|  GET   | /meals/:weekId     | Get all meals matching the weekId     | logged user |
 |  POST  | /meals/meal        | Create a meal                         | logged user |
 |  GET   | /meals/meal/:id    | Get a meal                            | logged user |
 | PATCH  | /meals/meal/:id    | Update a meal                         | logged user |
 | DELETE | /meals/meal/:id    | Delete a meal                         | logged user |
+|  GET   | /meals/:weekId     | Get all meals matching the weekId     | logged user |
 
 # React Components & Pages
 
