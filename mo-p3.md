@@ -31,7 +31,7 @@ _option v36: ingredients [ ObjectId, ref Ingredient ]_
 
    Fixed list
 
-[ {position: 100, name: petit déjeuner}, brunch (200), déjeuner (300), goûter(400), diner(500), souper(600), collation(700) ]
+[ {position: 100, name: petit déjeuner}, brunch (200), déjeuner (300), goûter(400), diner(500), souper(600) ]
 
 <!-- ## Day
 
@@ -124,3 +124,11 @@ _option v36: ingredients [ ObjectId, ref Ingredient ]_
 - MealCard (container of foods)
   - data of 1 meal
 - Day (container of meals ??? or pure css presentation ???) : to be seen with regard to the drag & drop feature
+
+# Utils
+
+## Date
+
+Date filter example on meals for MongoDb:
+
+`{ date: {$eq: ISODate('2022-02-04')} }`
