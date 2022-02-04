@@ -68,39 +68,55 @@ _option v36: ingredients [ ObjectId, ref Ingredient ]_
    CRD accessible to user (no update)
 
 # Routes
+
 ## Client
 
- Route | Action | Access 
- ----- | ---- | :---:
-/ | Display Homepage | all
-/signin | Display Signin form | all
-/signup | Display Signup form | all
-/week/:weekId | Display week(n) (default: currentWeek) | logged user
-/foods | Display all foods | logged user
-/foods/new | Display form to create food | logged user
-/foods/:id | Display form to edit a food | logged user
-/meals | Display all meals | logged user
-/meals/new | Display form to create meal => **DragnDrop** | logged user 
-/meals/:id | Display form to edit a meal | logged user
- 
+| Route           | Action                                           |   Access    |
+| --------------- | ------------------------------------------------ | :---------: |
+| /               | Display Homepage                                 |     all     |
+| /signin         | Display Signin form                              |     all     |
+| /signup         | Display Signup form                              |     all     |
+| /foods          | Display all foods                                | logged user |
+| /foods/new      | Display form to create food                      | logged user |
+| /foods/:id      | Display form to edit a food                      | logged user |
+| /meals/:weekId  | Display meals for week(n) (default: currentWeek) | logged user |
+| /meals/meal/new | Display form to create meal => **DragnDrop**     | logged user |
+| /meals/meal/:id | Display form to edit a meal                      | logged user |
+
 ## Server
 
-Verb | Route | Action | Access 
- :---: | ----- | ---- | :---:
- GET | /logout | Redirect to Homepage++ | logged user
- POST | /signin | Authenticate user inside Db | -
- POST | /signup | Create user inside Db + token | -
- GET | /weeks/:weekId | Get week(n) | logged user
- GET | /foods | Get all foods | logged user
- POST | /foods/new | Create a food | logged user
- GET | /foods/:id | Get a food | logged user
- PATCH | /foods/:id | Update a food | logged user
- DELETE | /foods/:id | Delete a food | logged user
- GET | /meals | Get all meals | logged user
- POST | /meals/new | Create a meal | logged user
- GET | /meals/:id | Get a meal | logged user
- PATCH | /meals/:id | Update a meal | logged user
- DELETE | /meals/:id | Delete a meal | logged user
+|  Verb  | Route              | Action                                |   Access    |
+| :----: | ------------------ | ------------------------------------- | :---------: |
+|  POST  | /signin            | Authenticate user inside Db           |      -      |
+|  POST  | /signup            | Create user inside Db + token         |      -      |
+|  GET   | /foods             | Get all foods                         | logged user |
+|  POST  | /foods/food        | Create a food                         | logged user |
+|  GET   | /foods/food/:id    | Get a food                            | logged user |
+| PATCH  | /foods/food/:id    | Update a food                         | logged user |
+| DELETE | /foods/food/:id    | Delete a food                         | logged user |
+|  GET   | /foods/:categoryId | Get all foods matching the categoryId | logged user |
+|  GET   | /meals/:weekId     | Get all meals matching the weekId     | logged user |
+|  POST  | /meals/meal        | Create a meal                         | logged user |
+|  GET   | /meals/meal/:id    | Get a meal                            | logged user |
+| PATCH  | /meals/meal/:id    | Update a meal                         | logged user |
+| DELETE | /meals/meal/:id    | Delete a meal                         | logged user |
 
- # React Components & Pages
- 
+# React Components & Pages
+
+## Pages
+
+- home (not logged in)
+- signin (form)
+- signup (form)
+- create/edit one food (form)
+- display one food (with edit & delete feature)
+- create/edit meal (meal composition with drag & drop form foods)
+- meals (week view)
+
+## Components
+
+- FoodCard
+  - data of 1 food for a user
+- MealCard (container of foods)
+  - data of 1 meal
+- Day (container of meals ??? or pure css presentation ???)
