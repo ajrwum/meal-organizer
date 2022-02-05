@@ -89,21 +89,21 @@ _option v36: ingredients [ ObjectId, ref Ingredient ]_
 
 ## Server
 
-|  Verb  | Route              | Action                                |   Access    |
-| :----: | ------------------ | ------------------------------------- | :---------: |
-|  POST  | /signin            | Authenticate user inside Db           |      -      |
-|  POST  | /signup            | Create user inside Db + token         |      -      |
-|  GET   | /foods             | Get all foods                         | logged user |
-|  POST  | /foods/food        | Create a food                         | logged user |
-|  GET   | /foods/food/:id    | Get a food                            | logged user |
-| PATCH  | /foods/food/:id    | Update a food                         | logged user |
-| DELETE | /foods/food/:id    | Delete a food                         | logged user |
-|  GET   | /foods/:categoryId | Get all foods matching the categoryId | logged user |
-|  POST  | /meals/meal        | Create a meal                         | logged user |
-|  GET   | /meals/meal/:id    | Get a meal                            | logged user |
-| PATCH  | /meals/meal/:id    | Update a meal                         | logged user |
-| DELETE | /meals/meal/:id    | Delete a meal                         | logged user |
-|  GET   | /meals/:weekId     | Get all meals matching the weekId     | logged user |
+|  Verb  | Route              | Action                                 |   Access    |
+| :----: | ------------------ | -------------------------------------- | :---------: |
+|  POST  | /signin            | Authenticate user inside Db            |      -      |
+|  POST  | /signup            | Create user inside Db + token          |      -      |
+|  GET   | /foods             | Get all foods                          | logged user |
+|  POST  | /foods/food        | Create a food                          | logged user |
+|  GET   | /foods/food/:id    | Get a food                             | logged user |
+| PATCH  | /foods/food/:id    | Update a food                          | logged user |
+| DELETE | /foods/food/:id    | Delete a food                          | logged user |
+|  GET   | /foods/:categoryId | Get all foods matching the categoryId  | logged user |
+|  POST  | /meals/meal        | Create a meal                          | logged user |
+|  GET   | /meals/meal/:id    | Get a meal                             | logged user |
+| PATCH  | /meals/meal/:id    | Update a meal                          | logged user |
+| DELETE | /meals/meal/:id    | Delete a meal                          | logged user |
+|  GET   | /meals/:date       | Get all meals matching the date's week | logged user |
 
 # React Components & Pages
 
@@ -131,8 +131,12 @@ _option v36: ingredients [ ObjectId, ref Ingredient ]_
 
 Date filter example on meals for MongoDb:
 
-`{ date: {$eq: ISODate('2022-02-04')} }`
+- { date: {$eq: ISODate('2022-02-04')} }
 
 Date filter between Monday and Sunday of 1 week:
 
-`{ date: { $gte: ISODate('2022-01-31'), $lt: ISODate('2022-02-07') } }`
+- { date: { $gte: ISODate('2022-01-31'), $lt: ISODate('2022-02-07') } }
+
+- { date: { $gte: ISODate('2022-02-21T00:00:00.000Z'), $lt: ISODate('2022-02-27T23:59:59.999Z') } }
+
+- { $and: [ { user: '61fea6bfca91546d46abaf40' }, { date: { $gte: ISODate('2022-02-21T00:00:00.000Z'), $lt: ISODate('2022-02-27T23:59:59.999Z') } } ] }
