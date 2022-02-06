@@ -83,27 +83,29 @@ _option v36: ingredients [ ObjectId, ref Ingredient ]_
 | /foods          | Display all foods                                | logged user |
 | /foods/new      | Display form to create food                      | logged user |
 | /foods/:id      | Display form to edit a food                      | logged user |
-| /meals/:weekId  | Display meals for week(n) (default: currentWeek) | logged user |
+| /meals/:date    | Display meals for week(n) (default: currentWeek) | logged user |
 | /meals/meal/new | Display form to create meal => **DragnDrop**     | logged user |
 | /meals/meal/:id | Display form to edit a meal                      | logged user |
 
 ## Server
 
-|  Verb  | Route              | Action                                 |   Access    |
-| :----: | ------------------ | -------------------------------------- | :---------: |
-|  POST  | /signin            | Authenticate user inside Db            |      -      |
-|  POST  | /signup            | Create user inside Db + token          |      -      |
-|  GET   | /foods             | Get all foods                          | logged user |
-|  POST  | /foods/food        | Create a food                          | logged user |
-|  GET   | /foods/food/:id    | Get a food                             | logged user |
-| PATCH  | /foods/food/:id    | Update a food                          | logged user |
-| DELETE | /foods/food/:id    | Delete a food                          | logged user |
-|  GET   | /foods/:categoryId | Get all foods matching the categoryId  | logged user |
-|  POST  | /meals/meal        | Create a meal                          | logged user |
-|  GET   | /meals/meal/:id    | Get a meal                             | logged user |
-| PATCH  | /meals/meal/:id    | Update a meal                          | logged user |
-| DELETE | /meals/meal/:id    | Delete a meal                          | logged user |
-|  GET   | /meals/:date       | Get all meals matching the date's week | logged user |
+|  Verb  | Route              | Action                                    |   Access    |
+| :----: | ------------------ | ----------------------------------------- | :---------: |
+|  POST  | /signin            | Authenticate user inside Db               |      -      |
+|  POST  | /signup            | Create user inside Db + token             |      -      |
+|  GET   | /foods             | Get all foods                             | logged user |
+|  POST  | /foods/food        | Create a food                             | logged user |
+|  GET   | /foods/food/:id    | Get a food                                | logged user |
+| PATCH  | /foods/food/:id    | Update a food                             | logged user |
+| DELETE | /foods/food/:id    | Delete a food                             | logged user |
+|  GET   | /foods/categories  | Get all categories (when creating a food) | logged user |
+|  GET   | /foods/:categoryId | Get all foods matching the categoryId     | logged user |
+|  POST  | /meals/meal        | Create a meal                             | logged user |
+|  GET   | /meals/meal/:id    | Get a meal                                | logged user |
+| PATCH  | /meals/meal/:id    | Update a meal                             | logged user |
+| DELETE | /meals/meal/:id    | Delete a meal                             | logged user |
+|  GET   | /meals/mealtypes   | Get all meal types (when creating a meal) | logged user |
+|  GET   | /meals/:date       | Get all meals matching the date's week    | logged user |
 
 # React Components & Pages
 
