@@ -159,6 +159,7 @@ if no meal has been added yet, the day is shown empty
   - access through a 'Ajout aliment' or '+ aliment' button above the list of existing foods
 - display a food
 - edit a food
+- delete a food
 
 ### /foods/food/:id (get)
 
