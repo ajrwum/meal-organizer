@@ -69,8 +69,9 @@ _option v36: ingredients [ ObjectId, ref Ingredient ]_
 | /signup                   | Display Signup form                              |     all     |
 | /signout                  | Link to signout                                  |     all     |
 | /foods                    | Display all foods                                | logged user |
-| /foods/new                | Display form to create food                      | logged user |
-| /foods/:id                | Display form to edit a food                      | logged user |
+| /foods/food/new           | Display form to create food                      | logged user |
+| /foods/food/view/:id      | Display a food                                   | logged user |
+| /foods/food/edit/:id      | Display form to edit a food                      | logged user |
 | /meals/:date              | Display meals for week(n) (default: currentWeek) | logged user |
 | /meals/meal/new/:mealDate | Display form to create meal => **DragnDrop**     | logged user |
 | /meals/meal/edit/:mealId  | Display form to edit a meal => **DragnDrop**     | logged user |
@@ -208,3 +209,14 @@ Date filter between Monday and Sunday of 1 week:
 - { date: { $gte: ISODate('2022-02-21T00:00:00.000Z'), $lt: ISODate('2022-02-27T23:59:59.999Z') } }
 
 - { $and: [ { user: '61fea6bfca91546d46abaf40' }, { date: { $gte: ISODate('2022-02-21T00:00:00.000Z'), $lt: ISODate('2022-02-27T23:59:59.999Z') } } ] }
+
+# Design choices
+
+## Icons
+
+```
+<i className='fa-solid fa-eye'></i>
+<i className='fa-solid fa-pencil'></i>
+<i className='fa-solid fa-trash-can'></i>
+
+```
