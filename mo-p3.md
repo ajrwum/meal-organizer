@@ -33,14 +33,6 @@ _option v36: ingredients [ ObjectId, ref Ingredient ]_
 
 [ {position: 100, name: petit déjeuner}, brunch (200), déjeuner (300), goûter(400), diner(500), souper(600) ]
 
-<!-- ## Day
-
-1. number: Number (to order days in a week)
-1. name: String
-1. meals: [ ObjectId, ref Meal ]
-
-   Fixed - no crud by user -->
-
 ## Meal
 
 1. type: ObjectId, ref MealType => **populate**
@@ -70,18 +62,18 @@ _option v36: ingredients [ ObjectId, ref Ingredient ]_
 
 ## Client
 
-| Route           | Action                                           |   Access    |
-| --------------- | ------------------------------------------------ | :---------: |
-| /               | Display Homepage                                 |     all     |
-| /signin         | Display Signin form                              |     all     |
-| /signup         | Display Signup form                              |     all     |
-| /signout        | Link to signout                                  |     all     |
-| /foods          | Display all foods                                | logged user |
-| /foods/new      | Display form to create food                      | logged user |
-| /foods/:id      | Display form to edit a food                      | logged user |
-| /meals/:date    | Display meals for week(n) (default: currentWeek) | logged user |
-| /meals/meal/new | Display form to create meal => **DragnDrop**     | logged user |
-| /meals/meal/:id | Display form to edit a meal                      | logged user |
+| Route                     | Action                                           |   Access    |
+| ------------------------- | ------------------------------------------------ | :---------: |
+| /                         | Display Homepage                                 |     all     |
+| /signin                   | Display Signin form                              |     all     |
+| /signup                   | Display Signup form                              |     all     |
+| /signout                  | Link to signout                                  |     all     |
+| /foods                    | Display all foods                                | logged user |
+| /foods/new                | Display form to create food                      | logged user |
+| /foods/:id                | Display form to edit a food                      | logged user |
+| /meals/:date              | Display meals for week(n) (default: currentWeek) | logged user |
+| /meals/meal/new/:mealDate | Display form to create meal => **DragnDrop**     | logged user |
+| /meals/meal/edit/:mealId  | Display form to edit a meal => **DragnDrop**     | logged user |
 
 ## Server
 
@@ -195,7 +187,11 @@ if no meal has been added yet, the day is shown empty
   - data of 1 food for a user
 - MealCard (container of foods)
   - data of 1 meal
-- Day (container of meals ??? or pure css presentation ???) : to be seen with regard to the drag & drop feature
+- Day (container of meals) : to be seen with regard to the drag & drop feature
+- FoodCategoryFilter
+  - takes props: a category (with all attributes for display), a ccsClass and a callback
+- ResetCategoryFilter
+  - takes props: a label (for display), a ccsClass and a callback
 
 # Utils
 
